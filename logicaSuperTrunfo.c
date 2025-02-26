@@ -127,7 +127,7 @@ int main() {
         printf("\nPIB: %.2f bilhões de reais", PIB_2);
         printf("\nArea em Km²: %.2fKm²", area_em_km_2);
         printf("\nDensidade populacional: %.2f hab/KM²", densidade_populacional_2);
-        printf("\nPIB per capita: %.2f reais", PIB_per_capita_2);   
+        printf("\nPIB per capita: %.2f reais\n", PIB_per_capita_2);   
 
     // Comparação de Cartas:
     // Desenvolva a lógica de comparação entre duas cartas.
@@ -150,12 +150,15 @@ int main() {
     resultado_pibpercapita = PIB_per_capita_1 > PIB_per_capita_2;
 
     //Para o código usaremos a comparação de POPULACAO
-    prinft("\nPara comparar as duas cartas usaremos como parametro a POPULACAO! Prepare-se!\n");
+    printf("\nPara comparar as duas cartas usaremos como parametro a POPULACAO! Prepare-se!\n");
+
+    printf("\nA população de %s é de %d\n", cidade_1, populacao_1);
+    printf("\nA população de %s é que %d\n", cidade_2, populacao_2);
     
-         if (resultado_PIB == 1){
-            printf("Parabens para a carta %s de código %s, seu PIB foi maior e você é a vencedora", cidade_1, codigo_1);
+         if (resultado_populacao == 1){
+            printf("\nParabens para a carta %s de código %s, sua população foi maior e você é a vencedora\n\n", cidade_1, codigo_1);
           }else{
-            printf("Parabens para a carta %s de código %s, seu PIB foi maior e você é a vencedora", cidade_2, codigo_2);
+            printf("\nParabens para a carta %s de código %s, sua população foi maior e você é a vencedora\n\n", cidade_2, codigo_2);
     }
     // Exibição dos Resultados:
     // Após realizar as comparações, exiba os resultados para o usuário.
