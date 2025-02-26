@@ -128,22 +128,6 @@ int main() {
         printf("\nArea em Km²: %.2fKm²", area_em_km_2);
         printf("\nDensidade populacional: %.2f hab/KM²", densidade_populacional_2);
         printf("\nPIB per capita: %.2f reais", PIB_per_capita_2);   
-        // fim do código
-        return 0;    
-    // Definição das variáveis para armazenar as propriedades das cidades
-    // Você pode utilizar o código do primeiro desafio
-
-    
-    // Cadastro das Cartas:
-    // Implemente a lógica para solicitar ao usuário que insira os dados das cidades
-    // utilizando a função scanf para capturar as entradas.
-    // utilize o código do primeiro desafio
-
-    // Exemplo:
-    // printf("Digite o código da cidade: ");
-    // scanf("%s", codigo);
-    // 
-    // (Repita para cada propriedade)
 
     // Comparação de Cartas:
     // Desenvolva a lógica de comparação entre duas cartas.
@@ -155,7 +139,24 @@ int main() {
     // } else {
     //     printf("Cidade 2 tem maior população.\n");
     // }
+ 
+    //Organizando os dados para imprimir os resultados
+    int resultado_populacao, resultado_turisticos, resultado_PIB, resultado_area, resultado_densidade, resultado_pibpercapita;
+    resultado_populacao = populacao_1 > populacao_2;
+    resultado_turisticos = numero_pontos_turisticos_1 > numero_pontos_turisticos_2;
+    resultado_PIB = PIB_1 > PIB_2;
+    resultado_area = area_em_km_1 > area_em_km_2;
+    resultado_densidade = densidade_populacional_1 < densidade_populacional_2;//essa é menor porque quanto menor a densidade populacional, melhor
+    resultado_pibpercapita = PIB_per_capita_1 > PIB_per_capita_2;
 
+    //Para o código usaremos a comparação de POPULACAO
+    prinft("\nPara comparar as duas cartas usaremos como parametro a POPULACAO! Prepare-se!\n");
+    
+         if (resultado_PIB == 1){
+            printf("Parabens para a carta %s de código %s, seu PIB foi maior e você é a vencedora", cidade_1, codigo_1);
+          }else{
+            printf("Parabens para a carta %s de código %s, seu PIB foi maior e você é a vencedora", cidade_2, codigo_2);
+    }
     // Exibição dos Resultados:
     // Após realizar as comparações, exiba os resultados para o usuário.
     // Certifique-se de que o sistema mostre claramente qual carta venceu e com base em qual atributo.
