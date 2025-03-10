@@ -129,43 +129,102 @@ int main() {
         printf("\nDensidade populacional: %.2f hab/KM²", densidade_populacional_2);
         printf("\nPIB per capita: %.2f reais\n", PIB_per_capita_2);   
 
-    // Comparação de Cartas:
-    // Desenvolva a lógica de comparação entre duas cartas.
-    // Utilize estruturas de decisão como if, if-else para comparar atributos como população, área, PIB, etc.
+    /*fazendo o menu interativo para a escolha dos atributos das cartas e organizando os dados para imprimir os resultados
+    de maneira correta*/
+    int menu_atributo;
 
-    // Exemplo:
-    // if (populacaoA > populacaoB) {
-    //     printf("Cidade 1 tem maior população.\n");
-    // } else {
-    //     printf("Cidade 2 tem maior população.\n");
-    // }
- 
-    //Organizando os dados para imprimir os resultados
-    int resultado_populacao, resultado_turisticos, resultado_PIB, resultado_area, resultado_densidade, resultado_pibpercapita;
-    resultado_populacao = populacao_1 > populacao_2;
-    resultado_turisticos = numero_pontos_turisticos_1 > numero_pontos_turisticos_2;
-    resultado_PIB = PIB_1 > PIB_2;
-    resultado_area = area_em_km_1 > area_em_km_2;
-    resultado_densidade = densidade_populacional_1 < densidade_populacional_2;//essa é menor porque quanto menor a densidade populacional, melhor
-    resultado_pibpercapita = PIB_per_capita_1 > PIB_per_capita_2;
+    printf("\n**Agora chegou a hora de jogar!**\nEscolha o ATRIBUTO que você quer usar como comparativo das cartas!");
+    printf("\n1-População\n2-Numero de pontos turisticos\n3-PIB\n4-Area em KM²\n5-Densidade populacional\n6-PIB per capita\n");
+    printf("\nEscolha a opção que você quer comparar!");
+    scanf("%d", &menu_atributo);
 
-    //Para o código usaremos a comparação de POPULACAO
-    printf("\nPara comparar as duas cartas usaremos como parametro a POPULACAO! Prepare-se!\n");
+    switch (menu_atributo){
+      case 1:
+      printf("\nVocê escolhe POPULAÇÃO\nVamos lá, aqui estão os dados de cada carta");
+      printf("\nA POPULAÇAO de %s , codigo %s é de %d pessoas -", cidade_1, codigo_1,populacao_1 );
+      printf(" A POPULAÇAO de %s , codigo %s é de %d pessoas ", cidade_2, codigo_2,populacao_2 );
 
-    printf("\nA população de %s é de %d\n", cidade_1, populacao_1);
-    printf("\nA população de %s é que %d\n", cidade_2, populacao_2);
-    
-         if (resultado_populacao == 1){
-            printf("\nParabens para a carta %s de código %s, sua população foi maior e você é a vencedora\n\n", cidade_1, codigo_1);
-          }else{
-            printf("\nParabens para a carta %s de código %s, sua população foi maior e você é a vencedora\n\n", cidade_2, codigo_2);
+      if (populacao_1 > populacao_2){
+        printf("\n**Parabens %s , a carta de código %s VENCEU!**\n", cidade_1, codigo_1);
+      }else if(populacao_2>populacao_1){
+        printf("\n**Parabens %s , a carta de código %s VENCEU!**\n", cidade_2, codigo_2);
+      }else{
+        printf("**VOCÊS EMPATARAM!!");
+      }
+      break;
+
+      case 2:
+      printf("\nVocê escolhe NUMERO DE PONTOS TURISTICOS\nVamos lá, aqui estão os dados de cada carta");
+      printf("\n%s , codigo %s tem %d pontos turísticos -", cidade_1, codigo_1,numero_pontos_turisticos_1 );
+      printf(" %s , codigo %s tem %d pontos turísticos", cidade_2, codigo_2,numero_pontos_turisticos_1 );
+
+      if (numero_pontos_turisticos_1 > numero_pontos_turisticos_2){
+        printf("\n**Parabens %s , a carta de código %s VENCEU!**\n", cidade_1, codigo_1);
+      }else if(numero_pontos_turisticos_2>numero_pontos_turisticos_1){
+        printf("\n**Parabens %s , a carta de código %s VENCEU!**\n", cidade_2, codigo_2);
+      }else{
+        printf("**VOCÊS EMPATARAM!!");
+      }
+      break;
+      case 3:
+      printf("\nVocê escolhe PIB\nVamos lá, aqui estão os dados de cada carta");
+      printf("\nO PIB de %s , codigo %s é de %.2f reais  -", cidade_1, codigo_1,numero_pontos_turisticos_1 );
+      printf(" O PIB de %s , codigo %s é de %.2f reais", cidade_2, codigo_2,numero_pontos_turisticos_1 );
+
+      if (PIB_1 > PIB_2){
+        printf("\n**Parabens %s , a carta de código %s VENCEU!**\n", cidade_1, codigo_1);
+      }else if(PIB_2 > PIB_1){
+        printf("\n**Parabens %s , a carta de código %s VENCEU!**\n", cidade_2, codigo_2);
+      }else{
+        printf("**VOCÊS EMPATARAM!!");
+      }
+      break;
+      case 4:
+      printf("\nVocê escolhe AREA EM KM²\nVamos lá, aqui estão os dados de cada carta");
+      printf("\nA AREA EM KM² de %s , codigo %s é de %.2f Km²  -", cidade_1, codigo_1,area_em_km_1 );
+      printf(" A AREA EM KM² de %s , codigo %s é de %.2f Km²", cidade_2, codigo_2,area_em_km_2 );
+
+      if (area_em_km_1 > area_em_km_2){
+        printf("\n**Parabens %s , a carta de código %s VENCEU!**\n", cidade_1, codigo_1);
+      }else if(area_em_km_2 > area_em_km_1){
+        printf("\n**Parabens %s , a carta de código %s VENCEU!**\n", cidade_2, codigo_2);
+      }else{
+        printf("**VOCÊS EMPATARAM!!");
+      }
+      break;
+      case 5:
+      printf("\nVocê escolhe DENSIDADE POPULACIONAL\nVamos lá, aqui estão os dados de cada carta");
+      printf("\nA DENSIDADE POPULACIONAL de %s , codigo %s é de %.2f hab/Km²  -", cidade_1, codigo_1,densidade_populacional_1 );
+      printf(" A DENSIDADE POPULACIONAL de %s , codigo %s é de %.2f hab/Km²", cidade_2, codigo_2,densidade_populacional_2 );
+
+      if (densidade_populacional_1 < densidade_populacional_2){
+        printf("\n**Parabens %s , a carta de código %s VENCEU!**\n", cidade_1, codigo_1);
+      }else if(densidade_populacional_2 < densidade_populacional_1){
+        printf("\n**Parabens %s , a carta de código %s VENCEU!**\n", cidade_2, codigo_2);
+      }else{
+        printf("**VOCÊS EMPATARAM!!");
+      }
+      break;
+      
+      case 6:
+      printf("\nVocê escolhe PIB PER CAPITA\nVamos lá, aqui estão os dados de cada carta");
+      printf("\nO PIB PER CAPITA de %s , codigo %s é de %.2f reais  -", cidade_1, codigo_1,densidade_populacional_1 );
+      printf(" O PIB PER CAPITA de %s , codigo %s é de %.2f reais", cidade_2, codigo_2,densidade_populacional_2 );
+
+      if (PIB_per_capita_1 > PIB_per_capita_2){
+        printf("\n**Parabens %s , a carta de código %s VENCEU!**\n", cidade_1, codigo_1);
+      }else if(PIB_per_capita_2 > PIB_per_capita_1){
+        printf("\n**Parabens %s , a carta de código %s VENCEU!**\n", cidade_2, codigo_2);
+      }else{
+        printf("**VOCÊS EMPATARAM!!");
+      }
+      break;
+      default:
+      printf("\nVocê escolheu uma opção invalida.");
+      break;      
     }
-    // Exibição dos Resultados:
-    // Após realizar as comparações, exiba os resultados para o usuário.
-    // Certifique-se de que o sistema mostre claramente qual carta venceu e com base em qual atributo.
+//fim do jogo
 
-    // Exemplo:
-    // printf("A cidade vencedora é: %s\n", cidadeVencedora);
 
     return 0;
 }
