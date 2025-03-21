@@ -137,7 +137,7 @@ int main() {
 
     //apresentando as opções para o jogador
     printf("\n**Agora chegou a hora de jogar!**\nVocê escolherá dois atributos para jogar\n");
-    printf("\nEscolha o primeiro ATRIBUTO que você quer usar como comparativo das cartas!")
+    printf("\nEscolha o primeiro ATRIBUTO que você quer usar como comparativo das cartas!");
     printf("\n1-População\n2-Numero de pontos turisticos\n3-PIB\n4-Area em KM²\n5-Densidade populacional\n6-PIB per capita\nQual número você quer?");
     scanf("%d", &menu_atributo);
 
@@ -145,7 +145,7 @@ int main() {
     while (menu_atributo < 0 || menu_atributo>6){
       printf("\nVocê escolheu uma opção inválida! Escolha uma opção correta");
       printf("\n1-População\n2-Numero de pontos turisticos\n3-PIB\n4-Area em KM²\n5-Densidade populacional\n6-PIB per capita\n");
-      scanf("%d", menu_atributo);
+      scanf("%d", &menu_atributo);
     }
     //menu para escolher qual os primeiros atributos selecionados pelo jogador
     switch (menu_atributo){
@@ -202,9 +202,6 @@ int main() {
       escolha_1 == 'PIB PER CAPITA';
 
       break;
-      
-      default:
-      return 0;
     }
     //escolhendo o segundo atributo
     printf("\nEscolha o segundo ATRIBUTO que você quer usar como comparativo das cartas!");
@@ -222,8 +219,10 @@ int main() {
     }else{
       printf("\n1-População\n2-Numero de pontos turisticos\n3-PIB\n4-Area em KM²\n5-Densidade populacional\n");
     }
-    while (menu_atributo_2==menu_atributo || menu_atributo_2 <0 || menu_atributo_2>6){
-      printf("Você escolheu uma opção que não está presente no menu");
+    scanf("%d", &menu_atributo_2);
+
+    while ( || menu_atributo_2 <0 || menu_atributo_2>6 || menu_atributo_2 == menu_atributo){
+      printf("Você escolheu uma opção que não está presente no menu\n");
       printf("Escolha uma opção correta");
       scanf("%d", &menu_atributo);
     }
