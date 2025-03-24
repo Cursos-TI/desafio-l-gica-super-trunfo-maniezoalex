@@ -213,7 +213,7 @@ int main() {
     }
     scanf("%d", &menu_atributo_2);
 
-    while (menu_atributo_2 < 0 || menu_atributo_2>6|| menu_atributo_2 == menu_atributo){
+    while (menu_atributo_2 < 0 || menu_atributo_2 >6 || menu_atributo_2 == menu_atributo){
       printf("\nVocê escolheu uma opção inválida! Escolha uma opção correta");
       scanf("%d", &menu_atributo_2);
     }
@@ -320,7 +320,7 @@ switch (menu_atributo_2){
   break;
   
   case 4:
-  printf("  segundo atributo foi AREA EM KM² ");
+  printf("O segundo atributo foi AREA EM KM² ");
   break;
 
   case 5:
